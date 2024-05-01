@@ -2,12 +2,11 @@ function augmentingPath(graph, start, end) {
     function dfs(node, visited, path) {
         visited[node] = true;
         if (node === end) {
-            path.push(node);
-            return path;
+            return path.concat(node);
         }
         for (let neighbor of graph[node]) {
-            if (!visited[neighbor.name] && neighbor.capacity > 0) {
-                let result = dfs(neighbor.name, visited, path.concat([node]));
+            if (!visited[neighbor] && neighbor.capacity > 0) {
+                let result = dfs(neighbor, visited, path.concat(node));
                 if (result.length > 0) {
                     return result;
                 }

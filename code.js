@@ -4,8 +4,8 @@ function augmentingPath(graph, start, end) {
         if (node === end) {
             return path.concat(node);
         }
-        for (let neighbor of graph[node]) {
-            if (!visited[neighbor] && neighbor.capacity > 0) {
+        for (let neighbor in graph[node]) {
+            if (!visited[neighbor] && graph[node][neighbor] > 0) {
                 let result = dfs(neighbor, visited, path.concat(node));
                 if (result.length > 0) {
                     return result;

@@ -33,3 +33,7 @@ accordingly.
 
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+**MY ANSWER:**
+
+The worst-case runtime would be visiting each vertex and each edge. This means the complexity is $\Theta(V + E)$
